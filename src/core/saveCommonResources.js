@@ -56,7 +56,7 @@ const getVdrsObjectsTransformations = async (vdrName, vdrLevel, accountId, insta
     ? elementKeyList.map(elementKey => equals(vdrLevel, 'accounts') && isNotNilAndEmpty(accountId)
       ? get(`${vdrLevel}/${accountId}/elements/${elementKey}/transformations`)
       : get(`${vdrLevel}/elements/${elementKey}/transformations`))
-    : Promise.resolve([]);
+    : [];
   await Promise.all(transformationsPromiseListForElementKey)
     .then(response => {
       return transformationsForElementKey.push(response)

@@ -8,6 +8,9 @@ commander
   .option("-f, --file [file]", "location of file to load objects from")
   .option("-d, --dir [dir]", "location of directory to load objects from")
   .option("-n, --name [name]", "name of specific object to be upload")
+  .option("-l, --level [level]", "level of the vdr")
+  .option("-a, --account [accountId]", "the account id")
+  .option("-i, --instance [instanceId]", "the instance id")
   .option("-v, --version [version]", "version of an object to upload")
   .action((object, account, options) => importBackup(object, account, options))
   .on('--help', () => {
